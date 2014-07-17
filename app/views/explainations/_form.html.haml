@@ -1,0 +1,9 @@
+= simple_form_for(@explaination) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :word
+    = f.association :description
+
+  .form-actions
+    = f.button :submit

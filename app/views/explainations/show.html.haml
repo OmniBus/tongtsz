@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Word:
+  = @explaination.word
+%p
+  %b Description:
+  = @explaination.description
+
+= link_to 'Edit', edit_explaination_path(@explaination)
+\|
+= link_to 'Back', explainations_path

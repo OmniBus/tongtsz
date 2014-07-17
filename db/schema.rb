@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717130603) do
+ActiveRecord::Schema.define(version: 20140717181206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "descriptions", force: true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "explainations", force: true do |t|
+    t.integer  "word_id"
+    t.integer  "description_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "explainations", ["description_id"], name: "index_explainations_on_description_id", using: :btree
+  add_index "explainations", ["word_id"], name: "index_explainations_on_word_id", using: :btree
+
+  create_table "languages", force: true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -50,5 +73,11 @@ ActiveRecord::Schema.define(version: 20140717130603) do
   add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "words", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

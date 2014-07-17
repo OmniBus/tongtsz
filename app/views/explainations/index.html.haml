@@ -1,0 +1,21 @@
+%h1 Listing explainations
+
+%table
+  %tr
+    %th Word
+    %th Description
+    %th
+    %th
+    %th
+
+  - @explainations.each do |explaination|
+    %tr
+      %td= explaination.word
+      %td= explaination.description
+      %td= link_to 'Show', explaination
+      %td= link_to 'Edit', edit_explaination_path(explaination)
+      %td= link_to 'Destroy', explaination, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Explaination', new_explaination_path
