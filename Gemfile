@@ -18,7 +18,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'puma'
 gem 'pundit'
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0.rc2', github: 'plataformatec/simple_form', branch: 'master'
 gem 'rails-i18n'
 group :development do
   gem 'better_errors'
