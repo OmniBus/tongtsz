@@ -13,4 +13,5 @@ describe Description, type: :model do
 
   it { should have_many(:explanations) }
   it { should have_many(:words).through(:explanations) }
+  it { should validate_presence_of(:content) }
 end
