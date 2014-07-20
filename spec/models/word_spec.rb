@@ -11,8 +11,6 @@ describe Word, type: :model do
     expect(@word.name).to match 'a word'
   end
   
-  it "should have many explanations" do
-    t = Word.reflect_on_association(:explanations)
-    t.macro.should == :has_many
-  end
+  it { should have_many(:explanations) }
+  it { should have_many(:descriptions).through(:explanations) }
 end

@@ -10,4 +10,7 @@ describe Description, type: :model do
   it "#content returns a string" do
     expect(@description.content).to match 'some description'
   end
+
+  it { should have_many(:explanations) }
+  it { should have_many(:words).through(:explanations) }
 end
