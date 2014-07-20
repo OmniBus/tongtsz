@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :word do
-    name "MyString"
+    name "word"
   end
 end

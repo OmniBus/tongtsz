@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :description do
-    content "MyText"
+    content "some description"
   end
 end

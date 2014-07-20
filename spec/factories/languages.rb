@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :language do
-    name "MyString"
-    code "MyString"
+    name "English"
+    code "en"
   end
 end
