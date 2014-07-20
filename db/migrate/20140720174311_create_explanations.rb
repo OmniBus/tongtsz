@@ -1,6 +1,6 @@
-class CreateExplainations < ActiveRecord::Migration
+class CreateExplanations < ActiveRecord::Migration
   def change
-    create_table :explainations do |t|
+    create_table :explanations do |t|
       t.references :word, index: true
       t.references :description, index: true
 
