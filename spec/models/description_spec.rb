@@ -1,5 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe Description, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Description, type: :model do
+  before(:each) { @description = Description.new(content: 'some description') }
+
+  subject { @description }
+
+  it { should respond_to(:content) }
+
+  it "#content returns a string" do
+    expect(@description.content).to match 'some description'
+  end
 end

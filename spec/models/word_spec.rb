@@ -1,5 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe Word, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Word, type: :model do
+  before(:each) { @word = Word.new(name: 'a word') }
+
+  subject { @word }
+
+  it { should respond_to(:name) }
+
+  it "#name returns a string" do
+    expect(@word.name).to match 'a word'
+  end
+  
+  it "should have many explanations" do
+    t = Word.reflect_on_association(:explanations)
+    t.macro.should == :has_many
+  end
 end

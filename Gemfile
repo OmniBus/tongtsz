@@ -52,4 +52,5 @@ group :test do
   gem 'faker'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', require: false
 end
